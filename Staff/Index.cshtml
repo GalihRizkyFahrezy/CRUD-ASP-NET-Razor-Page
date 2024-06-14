@@ -1,0 +1,60 @@
+﻿@page
+@model test02.Pages.Staff.IndexModel
+@{
+}
+
+<br />
+<h2>Staff</h2>
+
+<a class="btn btn-primary" href="/Staff/Create">Buat Baru</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <td>
+                Id
+            </td>
+            <td>
+                First Name
+            </td>
+            <td>
+                Last Name
+            </td>
+            <td>
+                Job
+            </td>
+            <td>
+                Hired Date
+            </td>
+            <td>
+                Actions
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.staffList)
+        {
+        <tr>
+            <td>
+                @item.id
+            </td>
+            <td>
+                @item.fname
+            </td>
+            <td>
+                @item.lname
+            </td>
+            <td>
+                @item.job
+            </td>
+            <td>
+                @item.hired
+            </td>
+            <td>
+                <a class="btn btn-primary" href="/Staff/Edit?id=@item.id">Edit</a>
+                <a class="btn btn-danger" href="/Staff/Delete?id=@item.id">Hapus</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
